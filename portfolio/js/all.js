@@ -9,9 +9,16 @@ $(document).ready(function(){
     $('.contact_pannel').removeClass('active');
   })
   $('.scroll_tip').click(function(){
-    $('.port_wrapper').animate({
-      scrollLeft: 0
-    },1000)
+    let scrollPosition = $('.port_wrapper').scrollLeft();
+    if (scrollPosition === 0){
+      $('.port_wrapper').animate({
+        scrollLeft: 5000
+      },1000);
+    } else{
+      $('.port_wrapper').animate({
+        scrollLeft: 0
+      },1000)
+    }
   })
 })
 
@@ -38,6 +45,7 @@ const swiper = new Swiper('.swiper', {
     scrollbar: {
       el: '.swiper-scrollbar',
     },
+    watchSlidesProgress: true,
   });
 
   /*lightbox*/
